@@ -5,6 +5,7 @@ import { Bot } from "./bot";
 import { Client } from "discord.js";
 import { MessageResponder } from "./services/message-responder";
 import { PingFinder } from "./services/ping-finder";
+import { Chroma } from "./services/chroma";
 
 let container = new Container();
 
@@ -14,5 +15,6 @@ container.bind<string>(TYPES.Token).toConstantValue(process.env.TOKEN);
 container.bind<string>(TYPES.CommandPrefix).toConstantValue(process.env.COMMAND_PREFIX);
 container.bind<MessageResponder>(TYPES.MessageResponder).to(MessageResponder).inSingletonScope();
 container.bind<PingFinder>(TYPES.PingFinder).to(PingFinder).inSingletonScope();
+container.bind<Chroma>(TYPES.Chroma).to(Chroma).inSingletonScope();
 
 export default container;
