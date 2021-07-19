@@ -2,3 +2,4 @@ node_modules
 build
 streamlabs-chroma/*
 !streamlabs-chroma/setup.md
+.env
